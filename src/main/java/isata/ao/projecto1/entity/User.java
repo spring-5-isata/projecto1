@@ -8,8 +8,8 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String nameUser;
-	private String emailUser;
+	private String name;
+	private String email;
 	@ManyToMany
 	private Set<Role> roles;
 	
@@ -18,20 +18,45 @@ public class User {
 	public Long getId() {
 		return id;
 	}
+	
+	
+	public User() {
+
+	}
+	
+	
+	
+	public User(String name, String email) {
+
+		this.name = name;
+		this.email = email;
+	}
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNameUser() {
-		return nameUser;
+		return getName();
 	}
-	public void setNameUser(String nameUser) {
-		this.nameUser = nameUser;
+
+
+	public String getName() {
+		return name;
 	}
-	public String getEmailUser() {
-		return emailUser;
+	public void setNameUser(String name) {
+		setName(name);
 	}
-	public void setEmailUser(String emailUser) {
-		this.emailUser = emailUser;
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }		

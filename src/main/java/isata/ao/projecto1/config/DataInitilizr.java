@@ -18,13 +18,29 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent arg0) {
 		// TODO Auto-generated method stub -
+		createUser("Martins Isata", "martinsisata@gmail.com");
+		createUser("Nerbel Isata", "Nerbelisata@gmail.com");
+		createUser("Martinho Isata", "martinhoisata@gmail.com");
+		createUser("Nerilia Isata", "neriliaisata@gmail.com");
 		
-		User user = new User();
+		//Select By ID
+		//User user = UserRepository.getOne(3L);
 		
-		user.setEmailUser("martinsisata@gmail.com");
-		user.setNameUser("Martins Isata");
+		//delete by ID
+		//UserRepository.deleteById(4L);
+		
+		//User user = UserRepository.findByNameIgnoreCaseLike("nerilia");
+		//System.out.println(user.getName());
+		
+		
+	}
+	
+	public void createUser (String name, String email) {
+		
+		User user = new User(name, email);
 		
 		UserRepository.save(user);
+		
 		
 	}
 
